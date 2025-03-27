@@ -1,0 +1,42 @@
+practicle 6 
+show version 
+after that
+
+configure terminal
+license boot module c1900 technology-package securityk9
+press y
+
+then type reload
+
+
+
+if enable then do this in router1
+clock set 10:30:45 march 27 2025
+mkdir smile 
+
+smile
+ then 
+
+configure terminal
+ip ips config location flash:smile
+ip ips name iosips
+ip ips notify log
+ip ips signature-category
+category all
+
+retired true 
+exit
+
+category ios_ips basic
+retired false
+exit
+exit
+y
+
+interface Serial0/1/0
+ip ips iosips out
+
+exit
+
+
+Modify the signature
