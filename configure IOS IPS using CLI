@@ -39,7 +39,6 @@ ip ips iosips out
 exit
 
 
-
 Modify the signature
 ip ips signature-definition
 signature 2004 4
@@ -55,3 +54,12 @@ exit
 exit
 y
 
+
+
+
+Syslog service
+configure terminal
+logging 192.168.1.6
+exit
+
+ping 192.168.1.2
