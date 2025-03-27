@@ -39,4 +39,19 @@ ip ips iosips out
 exit
 
 
+
 Modify the signature
+ip ips signature-definition
+signature 2004 4
+status
+retired false
+enabled true
+exit
+engine
+event-action produce-alert
+event-action deny-packet-inline
+exit
+exit
+exit
+y
+
