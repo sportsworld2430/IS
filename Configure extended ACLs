@@ -1,0 +1,25 @@
+practical 3
+rip karna hai
+
+router 1
+access-list 100 permit tcp host 192.168.3.2 host 192.168.1.3 eq ftp
+interface GigabitEthernet0/1
+ip access-group 100 out
+exit
+
+
+desktop cmd 
+ftp (ip address)
+
+
+configure verify apply an extended named acl
+router 1 
+
+enable
+configure terminal
+ip access-list extended SMILE
+permit tcp host 192.168.3.3 host 192.168.1.3 eq www
+exit
+interface GigabitEthernet0/1
+ip access-group SMILE out
+exit
