@@ -1,0 +1,102 @@
+Practicle 1 a)
+configure ospf md5 authentication
+
+router 1
+
+enable 
+configure terminal
+router ospf 1
+network 192.168.1.1 0.255.255.255 area 1
+network 10.1.1.0 0.255.255.255 area 1
+exit 
+exit
+
+router 2
+
+
+enable 
+configure terminal
+router ospf 1
+network 10.1.1.0 0.255.255.255 area 1
+network 100.2.2.0 0.255.255.255 area 1
+exit 
+exit
+
+router 3
+
+enable 
+configure terminal
+router ospf 1
+network 192.168.3.0 0.255.255.255 area 1
+network 100.2.2.0 0.255.255.255 area 1
+exit 
+exit
+  
+
+MD5 authentication
+
+router 1
+
+enable 
+configure terminal
+interface serial0/0/0
+ip ospf authentication message-digest
+ip ospf message-digest-key 1 md5 smile
+exit
+exit
+
+router 
+
+enable 
+configure terminal
+interface serial0/0/0
+ip ospf authentication message-digest
+ip ospf message-digest-key 1 md5 smile
+exit
+exit
+
+to verify the md5 authentication use the following command in the cli mode of router 1
+show ip ospf interface gigabitEthernet 0/1
+
+
+
+
+
+part 2- NTP
+both router 
+enable 
+configure terminal
+ntp server 192.168.1.5
+ntp update-calender
+exit
+
+
+part 3-syslog
+
+configure terminal
+logging 192.168.1.6
+exit
+
+
+
+part 4- ssh
+router 3
+configure terminal
+ip domain-name ismail.com
+hostname r3
+
+crypto key generate rsa
+
+line vty 0 4 
+transport input ssh 
+login local
+exit 
+username ismail privilege 15 password cisco 
+
+
+go to cmd of pc-c and type the command 
+
+ssh -i ismail 192.168.3.1
+
+
+password= cisco
