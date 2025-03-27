@@ -1,0 +1,11 @@
+practicle 2
+router 0 cli cmmond
+
+
+aaa new-model
+tacacs-server host 192.168.2.3 key cisco
+radius-server host 192.168.2.2 key cisco
+aaa authentication login ismail group tacacs+ group radius local
+line vty 0 4
+login authentication ismail
+exit
